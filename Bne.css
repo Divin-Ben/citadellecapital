@@ -338,7 +338,7 @@ home
 
 
 #firstImageHome {
-    background-image: url("./1d966dd1613dce75cdb0661a6997d23f.jpg");
+    background-image: url("./20240528154837-business-8676549-1280.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
@@ -500,7 +500,7 @@ home
 }
 
 #imageConsulting {
-    background-image: url("./b13df08c0e7690475537feaa0ac9419dcopie.jpg");
+    background-image: url("./Surprise-The-Results-Are-In-800x600.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -510,7 +510,7 @@ home
 }
 
 #secondImageConsulting {
-    background-image: url("./65800e015d49fa3a1887a6e10fba3babcopie.jpg");
+    background-image: url("./finance-5752803_960_720.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -604,4 +604,3 @@ footer
 #mention {
     color: #797561;
 }
-
