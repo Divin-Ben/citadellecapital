@@ -316,7 +316,7 @@ home
 .animate-slogan {
     color: black !important; /* Assure que la couleur est bien noire */
     font-family: 'Open Sans', sans-serif; /* Nouvelle police */
-    font-size: 1.5rem; /* Nouvelle taille de police */
+    font-size: 2rem; /* Nouvelle taille de police */
     font-weight: 300; /* Poids de la police */
     font-style: italic; /* Style italique */
     display: block; /* Pour s'assurer qu'il prend toute la largeur et centre le texte */
@@ -604,3 +604,4 @@ footer
 #mention {
     color: #797561;
 }
+
