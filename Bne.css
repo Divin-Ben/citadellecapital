@@ -504,6 +504,7 @@ footer
 #mention {
     color: #797561;
 }
+
 @media (max-width: 480px) {
     /* Menu de navigation */
     nav ul {
