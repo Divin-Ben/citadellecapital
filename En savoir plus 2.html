@@ -2,195 +2,209 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Détails de la Formation - Citadelle Capital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service de Prêt - Citadelle Capital</title>
     <link rel="icon" type="image/x-icon" href="./LE PRETEUR LOGO_Plan de travail 1 copie 15.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAo8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="./style.css" type="text/css">
-    
-    <style>
-        @font-face {
-        font-family: "Minimal";
-        src: url('./minimal.ttf');
-        }
-        /* Styles spécifiques pour cette page */
-        body {
-            /* Mise en place du background de l'image div.webp */
-            background-image: url('1d966dd1613dce75cdb0661a6997d23f.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Pour un effet de parallaxe */
-            color: #ffffff; /* Couleur de texte blanche pour la lisibilité sur le fond sombre */
-            position: relative;
-        }
-        /* Overlay pour améliorer la lisibilité */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Couche noire semi-transparente */
-            z-index: -1;
-        }
-        
-        /* En-tête de la page avec logo et titre */
-        .page-header {
-            background-color: transparent;
-            color: #ffffff;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .page-header .logo {
-            max-width: 150px;
-            margin-bottom: 20px;
-            /* Pour un meilleur affichage sur mobile */
-            height: auto;
-        }
-        .page-header h1 {
-            font-weight: 700;
-            font-size: 3.5rem;
-        }
-        /* Ajustement de la taille du titre pour les petits écrans */
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        .section-content {
-            padding: 60px 0;
-        }
-        .info-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #333;
-        }
-        .info-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        .info-card h4 {
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .icon-large {
-            font-size: 3rem;
-            color: #ff7f00;
-            margin-bottom: 20px;
-            transition: transform 0.4s ease-in-out;
-        }
-        .info-card:hover .icon-large {
-            transform: rotateY(360deg);
-        }
-        .contact-details {
-            list-style: none;
-            padding: 0;
-            font-size: 1.1rem;
-        }
-        .contact-details li {
-            margin-bottom: 10px;
-        }
-        .contact-details li i {
-            color: #0056b3;
-        }
-        .btn-back-home {
-            background-color: #bec2c6;
-            color: #ffffff;
-            border-radius: 50px;
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .btn-back-home:hover {
-            background-color: #003366;
-            transform: scale(1.05);
-        }
-        
-        /* Ajustements pour les petits écrans */
-        @media (max-width: 576px) {
-            .info-card {
-                padding: 20px;
-            }
-            .info-card h4 {
-                font-size: 1.2rem;
-            }
-            .contact-details {
-                font-size: 1rem;
-            }
-            .info-card img {
-                max-height: 150px !important;
-                object-fit: cover;
-                width: 100%;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+    /* Styles pour le thème sombre */
+    /* Importation de la police Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* Styles généraux et de réinitialisation */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #f0f0f0; /* Texte clair */
+        background-color: #121212; /* Fond très sombre */
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* En-tête de la page (Hero) */
+    .page-header {
+        background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('1d966dd1613dce75cdb0661a6997d23f.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #ffffff;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .back-link {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        z-index: 10;
+    }
+
+    .back-link:hover {
+        color: #00b894; /* Une couleur vive pour le survol */
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .logo {
+        max-width: 100px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .page-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .page-header .lead {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    /* Section de contenu principale */
+    .main-content-section {
+        padding: 60px 0;
+    }
+
+    /* Carte d'information principale */
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        background: #1e1e1e; /* Fond de carte sombre */
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        margin-bottom: 60px;
+        overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+        .info-card {
+            flex-direction: row;
+        }
+    }
+
+    .card-image {
+        flex: 1;
+        min-height: 250px;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-content {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-content h2 {
+        font-size: 2rem;
+        color: #ffffff; /* Titre blanc */
+        margin-bottom: 15px;
+    }
+
+    .card-content p {
+        color: #c0c0c0; /* Texte gris clair */
+    }
+    
+    .card-content .btn {
+        margin-top: 20px;
+        align-self: flex-start; /* Alignement du bouton */
+        text-decoration: none;
+        padding: 15px 30px;
+        background-color: #00b894; /* Couleur vive pour le bouton */
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    
+    .card-content .btn:hover {
+        background-color: #009977;
+    }
+    
+    .card-content .btn i {
+        margin-right: 10px;
+    }
+
+    /* Pied de page */
+    footer {
+        background-color: #0d0d0d; /* Pied de page très sombre */
+        color: #a0a0a0; /* Texte gris */
+        text-align: center;
+        padding: 25px 0;
+        font-size: 0.9rem;
+    }
+</style>
 <body>
-    <header class="page-header">
-        <div class="container">
-            <img src="./LE PRETEUR LOGO_Plan de travail 1 copie 15.png" alt="Logo de Citadelle Capital" class="logo" data-aos="zoom-in">
 
-            <h1 data-aos="fade-up">Service de prêt</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">
-               Notre service de prêt est fondé sur la rapidité et la confiance, vous permettant de bénéficier d'une aide financière quand vous en avez besoin.
-            </p>
-        </div>
-    </header>
-
-    <div class="container text-center mt-5" data-aos="zoom-in">
-        <a href="index.html" class="btn btn-back-home"><i class="fas fa-arrow-left mr-2"></i> Retour à l'accueil</a>
-    </div>
-
-    <section class="section-content">
+<header class="page-header">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="info-card" data-aos="fade-up">
-                    <div class="row align-items-center">
-                        <div class="col-md-5 text-center mb-4 mb-md-0">
-                            <img src="./reseau de confiance.jpg" alt="Marché financier" class="img-fluid rounded">
-                        </div>
-                        <div class="col-md-7">
-                            <p>Accédez à un prêt en toute confiance au prêt rapide à partir d'un minimum de 100$ remboursable sur 1 mois avec un taux d'intérêt de 27%. 
-Les modalités pour sécuriser notre investissement sont également disponibles. 
-</p>
-                            
-                            <a href="https://wa.me/243982324070" target="_blank" class="btn btn-success btn-lg mt-4">
-                                <i class="fa-brands fa-whatsapp"></i> Rejoignez-nous sur WhatsApp
-                            </a>
-                            </div>
-                    </div>
-                </div>
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
+        <div class="header-content">
+            <img src="./LE PRETEUR LOGO_Plan de travail 1 copie 15.png" alt="Logo de Citadelle Capital" class="logo">
+            <h1>Service de Prêt</h1>
+            <p class="lead">Notre service de prêt est fondé sur la rapidité et la confiance, vous permettant de bénéficier d'une aide financière quand vous en avez besoin.</p>
+        </div>
+    </div>
+</header>
+
+<main class="main-content-section">
+    <div class="container">
+        <div class="info-card">
+            <div class="card-image">
+                <img src="./reseau de confiance.jpg" alt="Marché financier">
+            </div>
+            <div class="card-content">
+                <h2>Accédez à un prêt en toute confiance</h2>
+                <p>Découvrez notre service de prêt rapide à partir d'un minimum de 100$ remboursable sur 1 mois avec un taux d'intérêt de 27%. Les modalités pour sécuriser notre investissement sont également disponibles.</p>
+                
+                <a href="https://wa.me/243982324070" target="_blank" class="btn">
+                    <i class="fab fa-whatsapp"></i> Rejoignez-nous sur WhatsApp
+                </a>
             </div>
         </div>
     </div>
-</section>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="./script.js"></script>
-    <script>
-        AOS.init();
-    </script>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 Citadelle Capital. Tous droits réservés.</p>
+    </div>
+</footer>
+
 </body>
 </html>
