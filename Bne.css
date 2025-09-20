@@ -504,3 +504,169 @@ footer
 #mention {
     color: #797561;
 }
+@media (max-width: 480px) {
+    /* Menu de navigation */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li a {
+        font-size: 0.8rem;
+    }
+
+    /* Section "Accueil" (Home) */
+    .jumbotron h1 {
+        font-size: 2em;
+    }
+
+    .jumbotron p {
+        font-size: 1em;
+    }
+    
+    .logo-container {
+        left: 15px;
+        top: 15px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    /* Section "Méthode" */
+    .rowSectionMethod {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .colSectionMethod, .imgMethod, #backgroundImgMethod, .method {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .colSectionMethod {
+        padding: 5% 10%;
+    }
+
+    /* Section "Raison de la consultation" */
+    .firstPartReason, .secondPartReason, .theerPartReason {
+        height: auto;
+        padding: 15% 5%;
+    }
+
+    /* Section "Profil" */
+    #sectionProfile p {
+        padding: 0 10px;
+    }
+
+    /* Section "Consulting" */
+    .sizing {
+        height: auto;
+    }
+    
+    .paragraph {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    /* Pied de page (footer) */
+    #end {
+        height: auto;
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Menu de navigation */
+    nav li a {
+        font-size: 1rem;
+    }
+
+    /* Section "Accueil" (Home) */
+    .jumbotron h1 {
+        font-size: 2.5em;
+    }
+
+    .jumbotron p {
+        font-size: 1.2em;
+    }
+    
+    .logo-container {
+        left: 20px;
+        top: 20px;
+    }
+    
+    .logo {
+        width: 130px;
+    }
+
+    /* Section "Méthode" */
+    .colSectionMethod, .textSectionMethod {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .colSectionMethod {
+        margin-top: 15%;
+    }
+    
+    .imgMethod, #backgroundImgMethod, .method {
+        width: 100%;
+    }
+    
+    .rowSectionMethod {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    /* Section "Raison de la consultation" */
+    .firstPartReason, .secondPartReason, .theerPartReason {
+        height: auto;
+        padding: 10% 5%;
+    }
+
+    /* Section "Profil" */
+    #sectionProfile p {
+        padding: 0 20px;
+    }
+
+    /* Section "Consulting" */
+    .paragraph {
+        margin-top: 10%;
+    }
+}
+@media (min-width: 769px) {
+    /* Menu de navigation */
+    nav li a {
+        font-size: 1.2rem;
+    }
+
+    /* Section "Accueil" (Home) */
+    .jumbotron h1 {
+        font-size: 3.5em;
+    }
+
+    .jumbotron p {
+        font-size: 1.5em;
+    }
+
+    /* Section "Méthode" */
+    .rowSectionMethod {
+        flex-direction: row;
+        height: 100vh;
+    }
+    
+    .colSectionMethod, .textSectionMethod {
+        margin-left: 18%;
+        margin-right: 18%;
+    }
+
+    .colSectionMethod {
+        margin-top: 25%;
+    }
+
+    .imgMethod, #backgroundImgMethod, .method {
+        width: 50vw;
+        height: 100vh;
+    }
+}
