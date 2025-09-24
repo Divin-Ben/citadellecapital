@@ -504,3 +504,11 @@ footer
 #mention {
     color: #797561;
 }
+footer {
+        background-color: #0d0d0d; /* Pied de page très sombre */
+        color: #a0a0a0; /* Texte gris */
+        text-align: center;
+        padding: 25px 0;
+        font-size: 0.9rem;
+    }
+
