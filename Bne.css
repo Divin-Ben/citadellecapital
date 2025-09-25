@@ -1,21 +1,26 @@
+/* ====================================
+   RÉINITIALISATION DE BASE & TYPOGRAPHIE
+==================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Lato', sans-serif;
     background-color: #FCFCFC;
-    overflow-x: hidden;
-    width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% et supprimé overflow-x: hidden; */
+    width: 100%; 
 }
+
 .btn,
 .card {
     border-radius: 0 !important;
 }
 
 hr {
-    width: 80%; 
+    width: 80%;
     margin: 0 auto;
 }
 p {
@@ -23,10 +28,16 @@ p {
 }
 a {
     color: white;
+    text-decoration: none; /* Ajouté */
 }
 a:hover {
     color: white;
+    text-decoration: underline; /* Ajouté */
 }
+
+/* ====================================
+   NAVIGATION (Overlay & Hamburger)
+==================================== */
 .overlay-navigation {
     position: fixed;
     z-index: 99;
@@ -35,9 +46,10 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: hsla(0, 0%, 100%, 0.2);
-    display: none;
-    opacity: 0;
+    display: none; /* Doit rester 'none' pour être géré par JS */
+    opacity: 0; /* Doit rester '0' pour être géré par JS */
 }
+
 nav,
 nav ul {
     width: 100%;
@@ -52,16 +64,17 @@ nav ul {
 }
 nav ul li {
     flex-basis: 20%;
+    /* CORRECTION CLÉ : Retiré 'display: none;' et 'opacity: 0;' pour éviter le masquage par défaut. */
+    /* Ces propriétés doivent être appliquées par votre script JavaScript lors de l'ouverture/fermeture. */
     justify-content: center;
     align-items: center;
     height: 100%;
     overflow: hidden;
-    opacity: 0;
-    display: none;
 }
 nav li a {
     position: relative;
-    top: 46%;
+    /* CORRECTION : top: 46% est retiré car le centrage se fait sur le <li> parent */
+    top: auto;
     color: #fff;
     text-transform: uppercase;
     font-family: 'Work sans', sans-serif;
@@ -71,7 +84,7 @@ nav li a {
     display: block;
     text-align: center;
     font-size: 0.9rem;
-    opacity: 0;
+    opacity: 0; /* À gérer par votre script d'animation */
 }
 nav li a:before {
     content: '';
@@ -85,7 +98,6 @@ nav li a:before {
     transform: translateX(-100%);
     opacity: 0;
     transition: all .2s linear;
-
 }
 nav li a:after {
     content: attr(data-content);
@@ -114,30 +126,23 @@ nav li a:hover:after {
     transform: translateY(15px);
     opacity: 1;
 }
-nav li:nth-of-type(1) {
-    background-color: #0a0a0a;
-}
-nav li:nth-of-type(2) {
-    background-color: #060606;
-}
-nav li:nth-of-type(3) {
-    background-color: #090a0a;
-}
-nav li:nth-of-type(4) {
-    background-color: #0e0f0f;
-}
-nav li:nth-of-type(5) {
-    background-color: #0b0b0b;
-}
+nav li:nth-of-type(1) { background-color: #0a0a0a; }
+nav li:nth-of-type(2) { background-color: #060606; }
+nav li:nth-of-type(3) { background-color: #090a0a; }
+nav li:nth-of-type(4) { background-color: #0e0f0f; }
+nav li:nth-of-type(5) { background-color: #0b0b0b; }
+
 .open-overlay {
-    position: sticky;
-    float: right;
-    margin-right: 3.2em;
+    /* CORRECTION : Remplacé sticky/float par fixed pour un hamburger stable */
+    position: fixed; 
+    float: none; /* Retiré */
+    right: 3.2em;
     top: 3.2rem;
     z-index: 100;
     width: 28px;
     display: block;
     cursor: pointer;
+    margin-right: 0; /* Retiré le margin-right car positionné par 'right' */
 }
 .open-overlay span {
     display: block;
@@ -146,17 +151,17 @@ nav li:nth-of-type(5) {
     cursor: pointer;
     margin-top: 8px;
 }
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 20px;
-    }
-    .social-icons .icon {
-        margin: 0 10px;
-        height: 2.2em;
-        width: 2.2em;
-    }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.social-icons .icon {
+    margin: 0 10px;
+    height: 2.2em;
+    width: 2.2em;
+}
 .logo-container {
     position: absolute;
     top: 30px;
@@ -168,75 +173,59 @@ nav li:nth-of-type(5) {
     height: auto;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
+
+/* ====================================
+   HOME & ANIMATIONS
+==================================== */
 .animated-text {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: fadeInScale 2s ease-out forwards;
-}
-
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.animated-text {
+    
     background: linear-gradient(90deg, #faf9f9, #f5f4f4, #f0f0ec, #fdfafa, #090909, #f7f7f9, #ede9ed, black);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: color-animation 5s infinite;
+    animation: fadeInScale 2s ease-out forwards, color-animation 5s infinite;
     background-size: 200%;
 }
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
 @keyframes color-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 @keyframes doubleTextEffect {
-  0% {
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); 
-  }
-  50% {
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9); 
-  }
-  100% {
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); 
-  }
+    0% { text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); }
+    50% { text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9); }
+    100% { text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); }
 }
 .animate-slogan-doubled-bw {
-  display: inline-block; 
-  font-size: 1.8em; 
-  font-weight: bold;
-  color: rgb(191, 187, 187); 
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); 
-  animation: doubleTextEffect 2s infinite alternate ease-in-out;
+    display: inline-block;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: rgb(191, 187, 187);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7);
+    animation: doubleTextEffect 2s infinite alternate ease-in-out;
 }
 .jumbotron {
-  background-color: #333; 
-  padding: 4rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: .3rem;
-  color: rgb(198, 195, 195); 
-  
+    background-color: #333;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+    color: rgb(198, 195, 195);
 }
-.animated-text {
-  color: white; 
-}
+.animated-text { color: white; }
 .title {
     color: #459C69;
     font-size: 1.5em;
     text-align: center;
 }
+
 /* first page */
 #home {
     background-image: url("./What-is-Financial-Management.jpg.optimal (1).jpg");
@@ -244,13 +233,15 @@ nav li:nth-of-type(5) {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    width: 100%; 
     margin-top: -30px;
 }
 .background {
     background: rgba(0, 0, 0, 0.3);
     height: 100vh;
-    width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    width: 100%; 
     color: #000000;
     display: flex;
     justify-content: center;
@@ -261,7 +252,7 @@ nav li:nth-of-type(5) {
     background: rgba(0, 0, 0, 0.0);
     color: white;
     margin-top: 10%;
-    width: 100%; 
+    width: 100%;
 }
 .jumbotron > * {
     margin-left: auto;
@@ -269,21 +260,25 @@ nav li:nth-of-type(5) {
 }
 .animate-slogan {
     color: black !important;
-    font-family: 'Open Sans', sans-serif; 
-    font-size: 2rem; 
-    font-weight: 300; 
-    font-style: italic; 
-    display: block; 
-    margin-top: 15px; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    display: block;
+    margin-top: 15px;
 }
 #firstImageHome {
     background-image: url("./20240528154837-business-8676549-1280.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    width: 100%; 
 }
-/* --presentation-- */
+
+/* ====================================
+   PRÉSENTATION (Méthode)
+==================================== */
 .black {
     background-color: #000000;
     color: #ffffff;
@@ -297,7 +292,8 @@ nav li:nth-of-type(5) {
 .rowSectionMethod {
     height: 100vh;
     color: white;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 .colSectionMethod {
     margin-top: 25%;
@@ -315,22 +311,28 @@ nav li:nth-of-type(5) {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 50vw;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 50vw par 50% */
+    width: 50%; 
+    max-width: 100%;
 }
 #backgroundImgMethod {
     height: 100vh;
-    width: 50vw;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 50vw par 50% */
+    width: 50%; 
+    max-width: 100%;
     margin-left: -10px;
     background: rgba(0, 0, 0, 0.3);
 }
 .method {
     height: 100vh;
-    width: 50vw;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 50vw par 50% */
+    width: 50%; 
+    max-width: 100%;
 }
-/*-- section: reason for consultation */
+
+/* ====================================
+   RAISONS (Services)
+==================================== */
 .firstIcon {
     margin-top: 30%;
     font-size: 1.5em;
@@ -341,33 +343,40 @@ nav li:nth-of-type(5) {
     color: white;
     height: 80vh;
     text-align: center;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 .secondPartReason {
     background-color: #FAF7F4;
     color: rgb(10, 10, 10);
     height: 80vh;
     text-align: center;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 .theerPartReason {
     background-color: #282828;
     color: white;
     height: 80vh;
     text-align: center;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 .text {
     margin-left: 15%;
     margin-right: 15%;
     text-align: left;
 }
-/* Section "Profile" */
+
+/* ====================================
+   PROFIL DU FONDATEUR
+==================================== */
 #sectionProfile {
     margin-top: 5%;
     text-align: center;
     width: 100%;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 #sectionProfile p {
     margin: 0 auto;
@@ -394,20 +403,25 @@ nav li:nth-of-type(5) {
     color: white;
     border: none;
 }
-/*-- section: consulting */
-.black {
+
+/* ====================================
+   CONSULTING
+==================================== */
+.black { /* Réutilisé ici */
     color: white;
     background-color: black;
     height: 50vh;
     text-align: center;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
-.white {
+.white { /* Réutilisé ici */
     color: black;
     background-color: white;
     height: 50vh;
     text-align: center;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 .paragraph {
     margin-left: 10%;
@@ -433,10 +447,15 @@ nav li:nth-of-type(5) {
     background: linear-gradient(0.25turn, rgba(245, 245, 245, 0.1), rgba(0, 0, 0, 0.5));
 }
 .sizing {
-    width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    width: 100%; 
     height: 50vh;
-    max-width: 100vw;
+    max-width: 100%;
 }
+
+/* ====================================
+   CONTACT & FOOTER
+==================================== */
 #contact {
     background-color: #0F0F0F;
     color: white;
@@ -444,7 +463,8 @@ nav li:nth-of-type(5) {
     padding: 20px 0;
     width: 100%;
     overflow: hidden;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 #contact h2 {
     font-size: 1.8em;
@@ -469,7 +489,8 @@ nav li:nth-of-type(5) {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
 .icon {
     color: #459C69;
@@ -480,18 +501,17 @@ nav li:nth-of-type(5) {
     margin-top: 20px;
     margin-bottom: 10px;
 }
-/* ====================================
-page: mention
-==================================== */
+
+/* Mentions */
 .mention {
     padding: 1em;
     font-size: 1.8em;
     text-align: center;
-    max-width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    max-width: 100%; 
 }
-/* ====================================
-footer
-==================================== */
+
+/* Footer */
 #end {
     height: 10vh;
     background-color: black;
@@ -499,80 +519,16 @@ footer
     padding: 0;
     text-align: center;
     overflow: hidden;
-    width: 100vw;
+    /* CORRECTION : Remplacé 100vw par 100% */
+    width: 100%; 
 }
 #mention {
     color: #797561;
-} 
+}
 footer {
-        background-color: #0d0d0d; /* Pied de page très sombre */
-        color: #a0a0a0; /* Texte gris */
-        text-align: center;
-        padding: 25px 0;
-        font-size: 0.9rem;
-    }
-/* ------------------ REQUÊTES MÉDIA POUR LA RÉACTIVITÉ ------------------ */
-
-/* Pour les écrans de moins de 768px (téléphones) */
-@media (max-width: 767.98px) {
-    /* Ajustements pour le hamburger menu */
-    .open-overlay {
-        right: 15px;
-        top: 25px;
-    }
-    .logo-container {
-        left: 15px;
-        top: 20px;
-    }
-    .logo {
-        width: 100px; /* Taille du logo réduite */
-    }
-
-    /* Ajustements pour la section Home */
-    .jumbotron {
-        margin-top: 15%; /* Marge ajustée pour la taille du logo */
-        padding: 2rem 1rem;
-    }
-    .animated-text {
-        font-size: 1.8rem;
-    }
-    .animate-slogan-doubled-bw {
-        font-size: 1.2em;
-    }
-
-    /* Ajustements pour la section Présentation */
-    .rowSectionMethod {
-        height: auto; /* Permet aux éléments de s'empiler */
-    }
-    .imgMethod {
-        height: 50vh; /* Réduit la hauteur de l'image sur mobile */
-    }
-    .method {
-        height: auto; /* Hauteur automatique */
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    .textSectionMethod {
-        font-size: 1em;
-    }
-
-    /* Ajustements pour les 3 colonnes de raison */
-    .firstPartReason, .secondPartReason, .thirdPartReason {
-        height: auto;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    .firstIcon {
-        margin-top: 0;
-        font-size: 2em;
-    }
-
-    /* Ajustements pour les sections Consulting et Contact */
-    .black, .white {
-        height: auto;
-        padding: 30px 15px;
-    }
-    .sizing {
-        height: 30vh; /* Hauteur des images ajustée */
-    }
+    background-color: #0d0d0d;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
 }
