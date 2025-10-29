@@ -1,25 +1,21 @@
-/* --- Correction Principale : Éviter 100vw et overflow-x --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; 
     background-color: #FCFCFC;
-    /* Le défilement horizontal est déjà masqué, mais le problème est la largeur */
     overflow-x: hidden;
-    /* CORRECTION : Remplacer 100vw par 100% */
-    width: 100%; 
+    width: 100vw;
 }
-
 .btn,
 .card {
     border-radius: 0 !important;
 }
 
 hr {
-    width: 80%;
+    width: 80%; 
     margin: 0 auto;
 }
 p {
@@ -31,8 +27,6 @@ a {
 a:hover {
     color: white;
 }
-
-/* --- Navigation en Overlay --- */
 .overlay-navigation {
     position: fixed;
     z-index: 99;
@@ -58,8 +52,6 @@ nav ul {
 }
 nav ul li {
     flex-basis: 20%;
-    /* Utiliser flex pour un meilleur centrage */
-    display: flex; 
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -69,7 +61,7 @@ nav ul li {
 }
 nav li a {
     position: relative;
-    /* top: 46%; à retirer si le li est un flex container centrant l'ancre */
+    top: 46%;
     color: #fff;
     text-transform: uppercase;
     font-family: 'Work sans', sans-serif;
@@ -81,8 +73,6 @@ nav li a {
     font-size: 0.9rem;
     opacity: 0;
 }
-
-/* Pseudo-éléments de navigation (aucune modification nécessaire pour le débordement) */
 nav li a:before {
     content: '';
     width: 70px;
@@ -95,8 +85,8 @@ nav li a:before {
     transform: translateX(-100%);
     opacity: 0;
     transition: all .2s linear;
-}
 
+}
 nav li a:after {
     content: attr(data-content);
     font-size: 0.7rem;
@@ -124,14 +114,21 @@ nav li a:hover:after {
     transform: translateY(15px);
     opacity: 1;
 }
-
-/* Couleurs de fond de l'overlay */
-nav li:nth-of-type(1) { background-color: #0a0a0a; }
-nav li:nth-of-type(2) { background-color: #060606; }
-nav li:nth-of-type(3) { background-color: #090a0a; }
-nav li:nth-of-type(4) { background-color: #0e0f0f; }
-nav li:nth-of-type(5) { background-color: #0b0b0b; }
-
+nav li:nth-of-type(1) {
+    background-color: #0a0a0a;
+}
+nav li:nth-of-type(2) {
+    background-color: #060606;
+}
+nav li:nth-of-type(3) {
+    background-color: #090a0a;
+}
+nav li:nth-of-type(4) {
+    background-color: #0e0f0f;
+}
+nav li:nth-of-type(5) {
+    background-color: #0b0b0b;
+}
 .open-overlay {
     position: sticky;
     float: right;
@@ -149,17 +146,17 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     cursor: pointer;
     margin-top: 8px;
 }
-.social-icons {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-}
-.social-icons .icon {
-    margin: 0 10px;
-    height: 2.2em;
-    width: 2.2em;
-}
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .social-icons .icon {
+        margin: 0 10px;
+        height: 2.2em;
+        width: 2.2em;
+    }
 .logo-container {
     position: absolute;
     top: 30px;
@@ -171,14 +168,25 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     height: auto;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
-
-/* Animations (Pas de changement nécessaire pour le débordement) */
 .animated-text {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: fadeInScale 2s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.animated-text {
     background: linear-gradient(90deg, #faf9f9, #f5f4f4, #f0f0ec, #fdfafa, #090909, #f7f7f9, #ede9ed, black);
     background-clip: text;
     -webkit-background-clip: text;
@@ -186,59 +194,63 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     animation: color-animation 5s infinite;
     background-size: 200%;
 }
-@keyframes fadeInScale {
-    0% { opacity: 0; transform: scale(0.9); }
-    100% { opacity: 1; transform: scale(1); }
-}
 @keyframes color-animation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 @keyframes doubleTextEffect {
-    0% { text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); }
-    50% { text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9); }
-    100% { text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); }
+  0% {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); 
+  }
+  50% {
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9); 
+  }
+  100% {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); 
+  }
 }
 .animate-slogan-doubled-bw {
-    display: inline-block;
-    font-size: 1.8em;
-    font-weight: bold;
-    color: rgb(191, 187, 187);
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7);
-    animation: doubleTextEffect 2s infinite alternate ease-in-out;
+  display: inline-block; 
+  font-size: 1.8em; 
+  font-weight: bold;
+  color: rgb(191, 187, 187); 
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); 
+  animation: doubleTextEffect 2s infinite alternate ease-in-out;
 }
 .jumbotron {
-    background-color: #333;
-    padding: 4rem 2rem;
-    margin-bottom: 2rem;
-    border-radius: .3rem;
-    color: rgb(198, 195, 195);
+  background-color: #333; 
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: .3rem;
+  color: rgb(198, 195, 195); 
+  
 }
 .animated-text {
-    color: white;
+  color: white; 
 }
 .title {
     color: #459C69;
     font-size: 1.5em;
     text-align: center;
 }
-
-/* --- Section Home (Accueil) --- */
+/* first page */
 #home {
     background-image: url("./What-is-Financial-Management.jpg.optimal (1).jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    /* CORRECTION : Remplacer 100vw par 100% */
-    width: 100%; 
+    width: 100vw;
     margin-top: -30px;
 }
 .background {
     background: rgba(0, 0, 0, 0.3);
     height: 100vh;
-    /* CORRECTION : Remplacer 100vw par 100% */
-    width: 100%; 
+    width: 100vw;
     color: #000000;
     display: flex;
     justify-content: center;
@@ -249,7 +261,7 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     background: rgba(0, 0, 0, 0.0);
     color: white;
     margin-top: 10%;
-    width: 100%;
+    width: 100%; 
 }
 .jumbotron > * {
     margin-left: auto;
@@ -257,23 +269,21 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
 }
 .animate-slogan {
     color: black !important;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: 300;
-    font-style: italic;
-    display: block;
-    margin-top: 15px;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 2rem; 
+    font-weight: 300; 
+    font-style: italic; 
+    display: block; 
+    margin-top: 15px; 
 }
 #firstImageHome {
     background-image: url("./20240528154837-business-8676549-1280.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    /* CORRECTION : Remplacer 100vw par 100% */
-    width: 100%;
+    width: 100vw;
 }
-
-/* --- Section Méthode / Présentation (Disposition en deux colonnes) --- */
+/* --presentation-- */
 .black {
     background-color: #000000;
     color: #ffffff;
@@ -287,10 +297,7 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
 .rowSectionMethod {
     height: 100vh;
     color: white;
-    /* CORRECTION : Remplacer max-width: 100vw par 100% */
-    width: 100%; 
-    /* Ajout du display flex pour gérer la structure en colonnes */
-    display: flex;
+    max-width: 100vw;
 }
 .colSectionMethod {
     margin-top: 25%;
@@ -308,55 +315,59 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    /* CORRECTION : Conserver width: 50% pour les deux colonnes sur desktop */
-    width: 50%; 
-    /* SUPPRIMÉ : max-width: 100vw */
+    width: 50vw;
+    max-width: 100vw;
 }
 #backgroundImgMethod {
     height: 100vh;
-    /* CORRECTION : Conserver width: 50% pour les deux colonnes sur desktop */
-    width: 100%; /* Doit être 100% du parent .imgMethod */
-    /* SUPPRIMÉ : max-width: 100vw */
-    margin-left: -10px; /* À revoir si ce décalage est vraiment nécessaire */
+    width: 50vw;
+    max-width: 100vw;
+    margin-left: -10px;
     background: rgba(0, 0, 0, 0.3);
 }
 .method {
     height: 100vh;
-    /* CORRECTION : Conserver width: 50% pour les deux colonnes sur desktop */
-    width: 50%;
-    /* SUPPRIMÉ : max-width: 100vw */
+    width: 50vw;
+    max-width: 100vw;
 }
-
-/* --- Section Reason for consultation --- */
+/*-- section: reason for consultation */
 .firstIcon {
     margin-top: 30%;
     font-size: 1.5em;
     color: rgb(249, 246, 246);
 }
-.firstPartReason,
-.secondPartReason,
-.theerPartReason {
+.firstPartReason {
+    background-color: black;
+    color: white;
     height: 80vh;
     text-align: center;
-    /* CORRECTION : Remplacer max-width: 100vw par 100% */
-    width: 100%; 
+    max-width: 100vw;
 }
-.firstPartReason { background-color: black; color: white; }
-.secondPartReason { background-color: #FAF7F4; color: rgb(10, 10, 10); }
-.theerPartReason { background-color: #282828; color: white; }
-
+.secondPartReason {
+    background-color: #FAF7F4;
+    color: rgb(10, 10, 10);
+    height: 80vh;
+    text-align: center;
+    max-width: 100vw;
+}
+.theerPartReason {
+    background-color: #282828;
+    color: white;
+    height: 80vh;
+    text-align: center;
+    max-width: 100vw;
+}
 .text {
     margin-left: 15%;
     margin-right: 15%;
     text-align: left;
 }
-
-/* --- Section Profile --- */
+/* Section "Profile" */
 #sectionProfile {
     margin-top: 5%;
     text-align: center;
     width: 100%;
-    /* SUPPRIMÉ : max-width: 100vw */
+    max-width: 100vw;
 }
 #sectionProfile p {
     margin: 0 auto;
@@ -383,18 +394,21 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     color: white;
     border: none;
 }
-
-/* --- Section Consulting (Disposition en colonnes) --- */
-.black, .white {
+/*-- section: consulting */
+.black {
+    color: white;
+    background-color: black;
     height: 50vh;
     text-align: center;
-    /* SUPPRIMÉ : max-width: 100vw */
-    /* Ajout du display flex pour gérer la structure en colonnes */
-    width: 50%;
+    max-width: 100vw;
 }
-.black { color: white; background-color: black; }
-.white { color: black; background-color: white; }
-
+.white {
+    color: black;
+    background-color: white;
+    height: 50vh;
+    text-align: center;
+    max-width: 100vw;
+}
 .paragraph {
     margin-left: 10%;
     margin-right: 10%;
@@ -405,29 +419,24 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     background-image: url("./Surprise-The-Results-Are-In-800x6001.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50%; /* Ajout pour l'image */
+}
+#backgroundImgConsulting {
+    background: linear-gradient(0.25turn, rgba(0, 0, 0, 0.5), rgba(245, 245, 245, 0.1));
 }
 #secondImageConsulting {
     background-image: url("./finance-5752803_960_720.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50%; /* Ajout pour l'image */
+    width: 100%;
 }
-#backgroundImgConsulting, #backgroundImgConsultingTwo {
-    /* Assure que l'overlay de l'image prend toute la place */
-    width: 100%; 
-    height: 100%;
+#backgroundImgConsultingTwo {
+    background: linear-gradient(0.25turn, rgba(245, 245, 245, 0.1), rgba(0, 0, 0, 0.5));
 }
-
 .sizing {
-    /* CORRECTION : Remplacer 100vw et max-width: 100vw par 100% */
-    width: 100%; 
+    width: 100vw;
     height: 50vh;
-    /* Ajout du display flex pour gérer la structure en colonnes */
-    display: flex;
+    max-width: 100vw;
 }
-
-/* --- Section Contact et Footer --- */
 #contact {
     background-color: #0F0F0F;
     color: white;
@@ -435,24 +444,54 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     padding: 20px 0;
     width: 100%;
     overflow: hidden;
-    /* SUPPRIMÉ : max-width: 100vw */
+    max-width: 100vw;
 }
-/* ... le reste de la section contact est OK ... */
-
+#contact h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    padding: 0 15px;
+    word-wrap: break-word;
+}
+#contact h3 {
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 15px;
+    word-wrap: break-word;
+}
+#contact p {
+    font-size: 1em;
+    padding: 0 15px;
+    word-wrap: break-word;
+}
 .contact-info-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* SUPPRIMÉ : max-width: 100vw */
+    max-width: 100vw;
 }
+.icon {
+    color: #459C69;
+    background-color: #212121;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 3em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* ====================================
+page: mention
+==================================== */
 .mention {
     padding: 1em;
     font-size: 1.8em;
     text-align: center;
-    /* SUPPRIMÉ : max-width: 100vw */
-    width: 100%;
+    max-width: 100vw;
 }
+/* ====================================
+footer
+==================================== */
 #end {
     height: 10vh;
     background-color: black;
@@ -460,39 +499,11 @@ nav li:nth-of-type(5) { background-color: #0b0b0b; }
     padding: 0;
     text-align: center;
     overflow: hidden;
-    /* CORRECTION : Remplacer 100vw par 100% */
-    width: 100%; 
+    width: 100vw;
 }
-/* ... le reste du footer est OK ... */
-
-
-/* ====================================
-   Media Query pour la Responsivité (Écrans < 768px) 📱
-   ==================================== */
-@media (max-width: 768px) {
-    /* 1. Empilement vertical des sections en colonnes */
-    .rowSectionMethod, /* Section Méthode/Présentation */
-    .sizing {             /* Section Consulting */
-        flex-direction: column; 
-        height: auto; /* Laisser la hauteur s'ajuster */
-    }
-
-    /* 2. Chaque colonne prend 100% de la largeur */
-    .imgMethod,
-    .method,
-    .black,
-    .white {
-        width: 100%; 
-        /* Utilisation de 50vh pour s'assurer que les sections d'image/texte ont une hauteur visible par défaut */
-        height: 50vh; 
-    }
-    
-    /* 3. Ajustement spécifique des largeurs (si elles utilisent 50vw) */
-    .imgMethod {
-        /* Remplacement du 50vw par 100% sur mobile */
-        width: 100%;
-    }
-}
+#mention {
+    color: #797561;
+} 
 footer {
         background-color: #0d0d0d; /* Pied de page très sombre */
         color: #a0a0a0; /* Texte gris */
@@ -500,3 +511,4 @@ footer {
         padding: 25px 0;
         font-size: 0.9rem;
     }
+
