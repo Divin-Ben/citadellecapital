@@ -511,4 +511,66 @@ footer {
         padding: 25px 0;
         font-size: 0.9rem;
     }
+/* ====================================
+   Media Query pour la Responsivité (Écrans < 768px) 📱
+   CORRECTIONS FINALES POUR LE DÉFILEMENT
+   ==================================== */
+@media (max-width: 768px) {
+    /* 1. Règle de Sécurité : Assure qu'aucun élément ne dépasse la largeur */
+    body {
+        /* On s'assure que le body est bien la source du clipping */
+        overflow-x: hidden;
+        width: 100%;
+    }
+    /* Règle générale pour éviter que tout élément ne dépasse */
+    .rowSectionMethod *, 
+    .sizing *,
+    .firstPartReason *, 
+    .secondPartReason *,
+    .theerPartReason * {
+        max-width: 100%;
+    }
+    
+    /* 2. Empilement et pleine largeur des conteneurs (vu précédemment) */
+    .rowSectionMethod, 
+    .sizing { 
+        flex-direction: column; 
+        height: auto; 
+    }
 
+    .imgMethod, .method, .black, .white {
+        width: 100%; 
+        height: 50vh; 
+    }
+    
+    /* 3. CORRECTION DES MARGES : Réduction des marges latérales sur mobile */
+    
+    /* Cibler les textes des colonnes de la section méthode/présentation */
+    .colSectionMethod,
+    .textSectionMethod {
+        /* On réduit les marges (de 18% à 5%) pour laisser de l'espace sur les bords */
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 0; /* Annulation de margin-top: 25% */
+    }
+    
+    /* Cibler les textes des raisons de consultation et autres paragraphes */
+    .text {
+        /* Réduction des marges (de 15% à 5%) */
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    /* Annulation de la marge négative critique */
+    #backgroundImgMethod {
+        margin-left: 0; 
+    }
+    
+    /* S'assurer que les titres ne sont pas trop larges */
+    #contact h2, #contact h3, #contact p {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
